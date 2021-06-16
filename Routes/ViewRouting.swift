@@ -50,6 +50,23 @@ extension String {
     }
 }
 
+enum AuthSteps {
+    case username
+    case password
+    case custom(view: Viewable)
+    
+    var view: Viewable {
+        switch self {
+        case .custom(let view):
+            return view
+        case .password:
+            return Viewable(id: "ViewController", presentationType: .push)
+        case .username:
+            return Viewable(id: "SecondViewController", presentationType: .push)
+        }
+    }
+}
+
 
 var flow: [Viewable] {
     let first = Viewable(id: "ViewController", presentationType: .push)
@@ -65,9 +82,9 @@ class Router {
     var navigationController: UINavigationController?
     var flow = [Viewable]()
     
-    init(_ nav: UINavigationController, flow: [Viewable]) {
+    init(_ nav: UINavigationController, flow: [AuthSteps]) {
        
-        self.flow = flow
+        self.flow = flow.compactMap { $0.view }
         self.navigationController = nav
     }
     

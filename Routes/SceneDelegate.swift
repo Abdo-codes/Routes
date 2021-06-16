@@ -22,8 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// 3. Create a view hierarchy programmatically
         let view = ViewController()
         let nav = UINavigationController(rootViewController: view)
-        
-        let router = Router(nav, flow: flow)
+        let signupFlow: [AuthSteps] = [.username,
+                          .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
+                          .password]
+        let router = Router(nav, flow: signupFlow)
         view.router = router
         /// 4. Set the root view controller of the window with your view controller
         window.rootViewController = nav
