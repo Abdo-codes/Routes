@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ThirdViewController.swift
 //  Routes
 //
 //  Created by Abdoelrhman Eaita on 05/06/2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-
-class ViewController: UIViewController, Routable {
+class ThirdViewController: UIViewController, Routable {
     var router: Router?
+    
     
     lazy var button: UIButton = {
         let button = UIButton()
@@ -22,11 +22,11 @@ class ViewController: UIViewController, Routable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .green
+        view.backgroundColor = .gray
         
         view.addSubview(button)
         
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,4 +38,3 @@ class ViewController: UIViewController, Routable {
         router?.presentableTappedNext(id)
     }
 }
-
