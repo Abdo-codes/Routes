@@ -7,6 +7,18 @@
 
 import UIKit
 
+
+/*
+ 
+ 
+  - >> - >> - >> - >>
+ 
+ 
+ 
+ 
+ */
+
+
 enum PresentationType {
     case push
     case present
@@ -33,7 +45,6 @@ struct Viewable: Identifiable {
 extension Viewable {
     var viewController: UIViewController? {
         if let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String, let id = id {
-            print("CFBundleName - \(appName)")
             if let viewControllerType = NSClassFromString("\(appName).\(id)") as? UIViewController.Type {
                 return viewControllerType.init()
             }
@@ -59,53 +70,49 @@ enum AuthSteps {
         switch self {
         case .custom(let view):
             return view
-        case .password:
-            return Viewable(id: "ViewController", presentationType: .push)
         case .username:
+            return Viewable(id: "ViewController", presentationType: .push)
+        case .password:
             return Viewable(id: "SecondViewController", presentationType: .push)
         }
     }
-}
-
-
-var flow: [Viewable] {
-    let first = Viewable(id: "ViewController", presentationType: .push)
-    let second = Viewable(id: "SecondViewController", presentationType: .push)
-    let third = Viewable(id: "ThirdViewController", presentationType: .push)
-    let fourth = Viewable(id: "ViewController", presentationType: .push)
-    let fifth = Viewable(id: "SecondViewController", presentationType: .push)
-    let sixth = Viewable(id: "ThirdViewController", presentationType: .push)
-    return [first, second, third, fourth, fifth, sixth]
 }
 
 class Router {
     var navigationController: UINavigationController?
     var flow = [Viewable]()
     
-    init(_ nav: UINavigationController, flow: [AuthSteps]) {
+    init(_ nav: UINavigationController = UINavigationController(), flow: [AuthSteps]) {
        
         self.flow = flow.compactMap { $0.view }
         self.navigationController = nav
+        guard let viewController = flow.first?.view.viewController else {
+            return
+        }
+        (viewController as? Routable)?.router = self
+        self.navigationController?.setViewControllers([viewController], animated: false)
     }
     
-    func presentableTappedNext(_ senderId: String) {
+    func nextViewable(_ senderId: String) -> Viewable? {
         let index = flow.firstIndex { view in
             view.id?.className == senderId
         }
         
-        guard let next = index?.advanced(by: 1) else { return }
+        guard let next = index?.advanced(by: 1), next < flow.count else { return nil }
+        return flow[next]
+    }
+    
+    func presentableTappedNext(_ senderId: String) {
+        guard let view = nextViewable(senderId),
+              let viewController = view.viewController else { return }
         
-        let nextViewable = flow[next]
+        (viewController as? Routable)?.router = self
         
-        guard let view = nextViewable.viewController else { return }
-        
-        (view as? Routable)?.router = self
-        
-        switch nextViewable.presentationType {
+        switch view.presentationType {
         case .present:
-            navigationController?.present(view, animated: true, completion: nil)
+            navigationController?.present(viewController, animated: true, completion: nil)
         default:
-            navigationController?.pushViewController(view, animated: true)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     

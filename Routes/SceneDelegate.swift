@@ -20,15 +20,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         /// 3. Create a view hierarchy programmatically
-        let view = ViewController()
-        let nav = UINavigationController(rootViewController: view)
         let signupFlow: [AuthSteps] = [.username,
-                          .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
-                          .password]
-        let router = Router(nav, flow: signupFlow)
-        view.router = router
+                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
+                                       .password,.username,
+                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
+                                       .password, .password,.username,
+                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
+                                       .password,.username,
+                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
+                                       .password, .password,.username
+        ]
+        
+        let router = Router(flow: signupFlow)
         /// 4. Set the root view controller of the window with your view controller
-        window.rootViewController = nav
+        window.rootViewController = router.navigationController
         
         /// 5. Set the window and call makeKeyAndVisible()
         self.window = window
