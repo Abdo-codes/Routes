@@ -10,16 +10,18 @@ import UIKit
 struct Viewable: Identifiable {
     var id: String?
     var presentationType: PresentationType
+    
+    var appname: String? {
+        Bundle.main.infoDictionary?["CFBundleName"] as? String
+    }
 }
 
 extension Viewable {
     var viewController: UIViewController? {
-        if let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String, let id = id {
-            if let viewControllerType = NSClassFromString("\(appName).\(id)") as? UIViewController.Type {
-                return viewControllerType.init()
-            }
+        guard let appname = appname, let id = id,
+              let viewControllerType = NSClassFromString("\(appname).\(id)") as? UIViewController.Type  else {
+            return nil
         }
-
-        return nil
+        return viewControllerType.init()
     }
 }
