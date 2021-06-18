@@ -30,8 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                        .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
                                        .password, .password,.username
         ]
-        
-        let router = Router(flow: signupFlow)
+        let map = RouterMap(signupFlow)
+        let router = Router(mapper: map)
         /// 4. Set the root view controller of the window with your view controller
         window.rootViewController = router.navigationController
         

@@ -9,31 +9,19 @@ import UIKit
 
 class Router {
     var navigationController: UINavigationController?
-    var flow = [Viewable]()
+    var mapper: RouterMap
     
-    init(_ nav: UINavigationController = UINavigationController(), flow: [AuthSteps]) {
-       
-        self.flow = flow.compactMap { $0.view }
+    init(_ nav: UINavigationController = UINavigationController(), mapper: RouterMap) {
+        self.mapper = mapper
         self.navigationController = nav
-        guard let viewController = flow.first?.view.viewController else { return }
+        guard let viewController = mapper.firstView?.viewController else { return }
         
         (viewController as? Routable)?.router = self
         self.navigationController?.setViewControllers([viewController], animated: false)
     }
     
-    func nextViewable(_ senderId: String) -> Viewable? {
-        let index = flow.firstIndex { view in
-            view.id?.className == senderId
-        }
-        
-        guard let next = index?.advanced(by: 1),
-              next < flow.count else { return nil }
-        
-        return flow[next]
-    }
-    
     func presentableTappedNext(_ senderId: String) {
-        guard let view = nextViewable(senderId),
+        guard let view = mapper.nextViewable(senderId),
               let viewController = view.viewController else { return }
         
         (viewController as? Routable)?.router = self
@@ -47,11 +35,7 @@ class Router {
     }
     
     func back(_ senderId: String) {
-        let item = flow.first { view in
-            view.id == senderId
-        }
-        
-        guard let item = item else { return }
+        guard let item = mapper.view(for: senderId) else { return }
         
         switch item.presentationType {
         case .push:
