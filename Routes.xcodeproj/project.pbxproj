@@ -17,6 +17,11 @@
 		39A495FA266C00AE00C3A91B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495F9266C00AE00C3A91B /* SecondViewController.swift */; };
 		39A495FC266C010000C3A91B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495FB266C010000C3A91B /* ThirdViewController.swift */; };
 		39A495FE266C030600C3A91B /* ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495FD266C030600C3A91B /* ViewRouting.swift */; };
+		39F946A6267D5BE2003A805C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A5267D5BE2003A805C /* Router.swift */; };
+		39F946A8267D5C0A003A805C /* PresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A7267D5C0A003A805C /* PresentationType.swift */; };
+		39F946AA267D5C20003A805C /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A9267D5C20003A805C /* Routable.swift */; };
+		39F946AC267D5C3C003A805C /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946AB267D5C3C003A805C /* Viewable.swift */; };
+		39F946AE267D5C5A003A805C /* String+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946AD267D5C5A003A805C /* String+ClassName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		39A495F9266C00AE00C3A91B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		39A495FB266C010000C3A91B /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		39A495FD266C030600C3A91B /* ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouting.swift; sourceTree = "<group>"; };
+		39F946A5267D5BE2003A805C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		39F946A7267D5C0A003A805C /* PresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationType.swift; sourceTree = "<group>"; };
+		39F946A9267D5C20003A805C /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		39F946AB267D5C3C003A805C /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
+		39F946AD267D5C5A003A805C /* String+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ClassName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,11 @@
 				39A495D4266BFA3200C3A91B /* LaunchScreen.storyboard */,
 				39A495D7266BFA3200C3A91B /* Info.plist */,
 				39A495FD266C030600C3A91B /* ViewRouting.swift */,
+				39F946A5267D5BE2003A805C /* Router.swift */,
+				39F946A7267D5C0A003A805C /* PresentationType.swift */,
+				39F946A9267D5C20003A805C /* Routable.swift */,
+				39F946AB267D5C3C003A805C /* Viewable.swift */,
+				39F946AD267D5C5A003A805C /* String+ClassName.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -265,10 +280,15 @@
 			files = (
 				39A495FA266C00AE00C3A91B /* SecondViewController.swift in Sources */,
 				39A495FE266C030600C3A91B /* ViewRouting.swift in Sources */,
+				39F946AC267D5C3C003A805C /* Viewable.swift in Sources */,
 				39A495CE266BFA3200C3A91B /* ViewController.swift in Sources */,
+				39F946A6267D5BE2003A805C /* Router.swift in Sources */,
 				39A495FC266C010000C3A91B /* ThirdViewController.swift in Sources */,
 				39A495CA266BFA3100C3A91B /* AppDelegate.swift in Sources */,
 				39A495CC266BFA3100C3A91B /* SceneDelegate.swift in Sources */,
+				39F946AE267D5C5A003A805C /* String+ClassName.swift in Sources */,
+				39F946AA267D5C20003A805C /* Routable.swift in Sources */,
+				39F946A8267D5C0A003A805C /* PresentationType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
