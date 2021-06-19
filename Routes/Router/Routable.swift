@@ -14,6 +14,7 @@ protocol Routable: AnyObject {
 
 extension Routable {
     var id :String {
-        String(describing: Self.self)
+        String(describing: type(of: self))
     }
 }
+

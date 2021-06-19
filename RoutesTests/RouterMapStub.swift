@@ -1,5 +1,5 @@
 //
-//  RouterMapTestMock.swift
+//  RouterMapStub.swift
 //  RoutesTests
 //
 //  Created by Abdoelrhman Eaita on 19/06/2021.
@@ -8,10 +8,10 @@
 import Foundation
 @testable import Routes
 
-struct RouterMock: RouterMap {
-    var flow = [AuthSteps]()
+struct RouterStub: RouterMap {
+    var flow = [AuthStep]()
     
-    init(_ flow: [AuthSteps]) {
+    init(_ flow: [AuthStep]) {
         self.flow = flow
     }
     var firstView: Viewable? {

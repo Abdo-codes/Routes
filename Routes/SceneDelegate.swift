@@ -20,15 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         /// 3. Create a view hierarchy programmatically
-        let signupFlow: [AuthSteps] = [.username,
-                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
-                                       .password,.username,
-                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
-                                       .password, .password,.username,
-                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
-                                       .password,.username,
-                                       .custom(view: Viewable(id: "ThirdViewController", presentationType: .push)),
-                                       .password, .password,.username
+        let signupFlow: [AuthStep] = [.username,
+                                       .custom(view: Viewable(id: ThirdViewController.toString, presentationType: .push)),
+                                       .password
         ]
         let map = RouterMapper(signupFlow)
         let router = Router(mapper: map)

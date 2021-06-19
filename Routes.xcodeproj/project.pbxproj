@@ -16,7 +16,7 @@
 		39A495EC266BFA3300C3A91B /* RoutesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495EB266BFA3300C3A91B /* RoutesUITests.swift */; };
 		39A495FA266C00AE00C3A91B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495F9266C00AE00C3A91B /* SecondViewController.swift */; };
 		39A495FC266C010000C3A91B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495FB266C010000C3A91B /* ThirdViewController.swift */; };
-		39A495FE266C030600C3A91B /* ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495FD266C030600C3A91B /* ViewRouting.swift */; };
+		39A495FE266C030600C3A91B /* AuthStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A495FD266C030600C3A91B /* AuthStep.swift */; };
 		39F946A6267D5BE2003A805C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A5267D5BE2003A805C /* Router.swift */; };
 		39F946A8267D5C0A003A805C /* PresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A7267D5C0A003A805C /* PresentationType.swift */; };
 		39F946AA267D5C20003A805C /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946A9267D5C20003A805C /* Routable.swift */; };
@@ -24,8 +24,10 @@
 		39F946AE267D5C5A003A805C /* String+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946AD267D5C5A003A805C /* String+ClassName.swift */; };
 		39F946B0267D62C2003A805C /* RouterMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946AF267D62C2003A805C /* RouterMap.swift */; };
 		39F946B2267E2F0B003A805C /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B1267E2F0B003A805C /* RouterTests.swift */; };
-		39F946B4267E2FA5003A805C /* RouterMapTestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B3267E2FA5003A805C /* RouterMapTestMock.swift */; };
+		39F946B4267E2FA5003A805C /* RouterMapStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B3267E2FA5003A805C /* RouterMapStub.swift */; };
 		39F946B6267E32EF003A805C /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B5267E32EF003A805C /* SpyNavigationController.swift */; };
+		39F946B8267E9137003A805C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B7267E9137003A805C /* BaseViewController.swift */; };
+		39F946BA267E9F71003A805C /* UIViewController+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F946B9267E9F71003A805C /* UIViewController+toString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,7 @@
 		39A495ED266BFA3300C3A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A495F9266C00AE00C3A91B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		39A495FB266C010000C3A91B /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		39A495FD266C030600C3A91B /* ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouting.swift; sourceTree = "<group>"; };
+		39A495FD266C030600C3A91B /* AuthStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStep.swift; sourceTree = "<group>"; };
 		39F946A5267D5BE2003A805C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		39F946A7267D5C0A003A805C /* PresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationType.swift; sourceTree = "<group>"; };
 		39F946A9267D5C20003A805C /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
@@ -69,8 +71,10 @@
 		39F946AD267D5C5A003A805C /* String+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ClassName.swift"; sourceTree = "<group>"; };
 		39F946AF267D62C2003A805C /* RouterMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMap.swift; sourceTree = "<group>"; };
 		39F946B1267E2F0B003A805C /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
-		39F946B3267E2FA5003A805C /* RouterMapTestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMapTestMock.swift; sourceTree = "<group>"; };
+		39F946B3267E2FA5003A805C /* RouterMapStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMapStub.swift; sourceTree = "<group>"; };
 		39F946B5267E32EF003A805C /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
+		39F946B7267E9137003A805C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		39F946B9267E9F71003A805C /* UIViewController+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+toString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,21 +125,15 @@
 		39A495C8266BFA3100C3A91B /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				39A495C9266BFA3100C3A91B /* AppDelegate.swift */,
 				39A495CB266BFA3100C3A91B /* SceneDelegate.swift */,
-				39A495CD266BFA3100C3A91B /* ViewController.swift */,
-				39A495F9266C00AE00C3A91B /* SecondViewController.swift */,
-				39A495FB266C010000C3A91B /* ThirdViewController.swift */,
-				39A495D2266BFA3200C3A91B /* Assets.xcassets */,
+				39A495C9266BFA3100C3A91B /* AppDelegate.swift */,
 				39A495D4266BFA3200C3A91B /* LaunchScreen.storyboard */,
 				39A495D7266BFA3200C3A91B /* Info.plist */,
-				39A495FD266C030600C3A91B /* ViewRouting.swift */,
-				39F946A5267D5BE2003A805C /* Router.swift */,
-				39F946AF267D62C2003A805C /* RouterMap.swift */,
-				39F946A7267D5C0A003A805C /* PresentationType.swift */,
-				39F946A9267D5C20003A805C /* Routable.swift */,
-				39F946AB267D5C3C003A805C /* Viewable.swift */,
-				39F946AD267D5C5A003A805C /* String+ClassName.swift */,
+				39A495D2266BFA3200C3A91B /* Assets.xcassets */,
+				39F946BD267E9FF9003A805C /* Extensions */,
+				39F946BE267EA0C6003A805C /* Flows */,
+				39F946BC267E9FE9003A805C /* Router */,
+				39F946BB267E9FDA003A805C /* Views */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -147,7 +145,7 @@
 				39A495E2266BFA3300C3A91B /* Info.plist */,
 				39F946B1267E2F0B003A805C /* RouterTests.swift */,
 				39F946B5267E32EF003A805C /* SpyNavigationController.swift */,
-				39F946B3267E2FA5003A805C /* RouterMapTestMock.swift */,
+				39F946B3267E2FA5003A805C /* RouterMapStub.swift */,
 			);
 			path = RoutesTests;
 			sourceTree = "<group>";
@@ -159,6 +157,46 @@
 				39A495ED266BFA3300C3A91B /* Info.plist */,
 			);
 			path = RoutesUITests;
+			sourceTree = "<group>";
+		};
+		39F946BB267E9FDA003A805C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39F946B7267E9137003A805C /* BaseViewController.swift */,
+				39A495CD266BFA3100C3A91B /* ViewController.swift */,
+				39A495F9266C00AE00C3A91B /* SecondViewController.swift */,
+				39A495FB266C010000C3A91B /* ThirdViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		39F946BC267E9FE9003A805C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				39F946A5267D5BE2003A805C /* Router.swift */,
+				39F946AF267D62C2003A805C /* RouterMap.swift */,
+				39F946A7267D5C0A003A805C /* PresentationType.swift */,
+				39F946A9267D5C20003A805C /* Routable.swift */,
+				39F946AB267D5C3C003A805C /* Viewable.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		39F946BD267E9FF9003A805C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39F946AD267D5C5A003A805C /* String+ClassName.swift */,
+				39F946B9267E9F71003A805C /* UIViewController+toString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		39F946BE267EA0C6003A805C /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				39A495FD266C030600C3A91B /* AuthStep.swift */,
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F946B8267E9137003A805C /* BaseViewController.swift in Sources */,
 				39A495FA266C00AE00C3A91B /* SecondViewController.swift in Sources */,
-				39A495FE266C030600C3A91B /* ViewRouting.swift in Sources */,
+				39A495FE266C030600C3A91B /* AuthStep.swift in Sources */,
 				39F946AC267D5C3C003A805C /* Viewable.swift in Sources */,
 				39A495CE266BFA3200C3A91B /* ViewController.swift in Sources */,
 				39F946A6267D5BE2003A805C /* Router.swift in Sources */,
@@ -299,6 +338,7 @@
 				39A495FC266C010000C3A91B /* ThirdViewController.swift in Sources */,
 				39A495CA266BFA3100C3A91B /* AppDelegate.swift in Sources */,
 				39A495CC266BFA3100C3A91B /* SceneDelegate.swift in Sources */,
+				39F946BA267E9F71003A805C /* UIViewController+toString.swift in Sources */,
 				39F946AE267D5C5A003A805C /* String+ClassName.swift in Sources */,
 				39F946AA267D5C20003A805C /* Routable.swift in Sources */,
 				39F946A8267D5C0A003A805C /* PresentationType.swift in Sources */,
@@ -311,7 +351,7 @@
 			files = (
 				39F946B6267E32EF003A805C /* SpyNavigationController.swift in Sources */,
 				39F946B2267E2F0B003A805C /* RouterTests.swift in Sources */,
-				39F946B4267E2FA5003A805C /* RouterMapTestMock.swift in Sources */,
+				39F946B4267E2FA5003A805C /* RouterMapStub.swift in Sources */,
 				39A495E1266BFA3300C3A91B /* RoutesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

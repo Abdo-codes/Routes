@@ -15,7 +15,7 @@ class RouterTests: XCTestCase {
     
     override func setUpWithError() throws {
         spyNavController = SpyNavigationController()
-        sut = Router(spyNavController, mapper: RouterMock([.password, .username]))
+        sut = Router(spyNavController, mapper: RouterStub([.password, .username]))
     }
 
     override func tearDownWithError() throws {
@@ -25,7 +25,7 @@ class RouterTests: XCTestCase {
 
     func testGivenTappedWithIDWhenUserTapNextOnPush() {
         //given
-        let firstController = AuthSteps.password
+        let firstController = AuthStep.password
         
         // when
         sut.presentableTappedNext( firstController.view.id!)
@@ -40,9 +40,9 @@ class RouterTests: XCTestCase {
     
     func testGivenTappedWithIDWhenUserTapNextOnPresent() {
         //given
-        let step: AuthSteps = .custom(view: Viewable(id: "ThirdViewController",
+        let step: AuthStep = .custom(view: Viewable(id: "ThirdViewController",
                                                      presentationType: .present))
-        let mapper = RouterMock([step])
+        let mapper = RouterStub([step])
         sut.mapper = mapper
         
         // when
@@ -69,8 +69,8 @@ class RouterTests: XCTestCase {
     
     func testGivenTappedBackOnPush() {
         // given another view is pushed
-        let secondController = AuthSteps.username
-        let passId = AuthSteps.password.view.id
+        let secondController = AuthStep.username
+        let passId = AuthStep.password.view.id
         
         
         // when
@@ -83,9 +83,9 @@ class RouterTests: XCTestCase {
     
     func testGivenTappedBackOnPresent() {
         //given
-        let step: AuthSteps = .custom(view: Viewable(id: "ThirdViewController",
+        let step: AuthStep = .custom(view: Viewable(id: "ThirdViewController",
                                                      presentationType: .present))
-        let mapper = RouterMock([step])
+        let mapper = RouterStub([step])
         sut.mapper = mapper
         
         // when

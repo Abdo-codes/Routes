@@ -1,5 +1,5 @@
 //
-//  ViewRouting.swift
+//  AuthStep.swift
 //  Routes
 //
 //  Created by Abdoelrhman Eaita on 05/06/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum AuthSteps {
+enum AuthStep: FlowItem {
     case username
     case password
     case custom(view: Viewable)

@@ -13,10 +13,14 @@ protocol RouterMap {
     func view(for id: String) -> Viewable?
 }
 
+protocol FlowItem {
+    var view: Viewable { get }
+}
+
 struct RouterMapper: RouterMap {
     var flow = [Viewable]()
 
-    init(_ flow: [AuthSteps]) {
+    init(_ flow: [FlowItem]) {
         self.flow = flow.compactMap { $0.view }
     }
     
