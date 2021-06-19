@@ -14,6 +14,6 @@ protocol Routable: AnyObject {
 
 extension Routable {
     var id :String {
-        NSStringFromClass(Self.self)
+        String(describing: Self.self)
     }
 }

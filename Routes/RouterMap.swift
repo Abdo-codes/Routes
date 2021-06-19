@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct RouterMap {
+protocol RouterMap {
+    var firstView: Viewable? { get }
+    func nextViewable(_ senderId: String) -> Viewable?
+    func view(for id: String) -> Viewable?
+}
+
+struct RouterMapper: RouterMap {
     var flow = [Viewable]()
 
     init(_ flow: [AuthSteps]) {
@@ -20,7 +26,7 @@ struct RouterMap {
     
     func nextViewable(_ senderId: String) -> Viewable? {
         let index = flow.firstIndex { view in
-            view.id?.className == senderId
+            view.id == senderId
         }
         
         guard let next = index?.advanced(by: 1),

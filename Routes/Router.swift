@@ -21,6 +21,8 @@ class Router {
     }
     
     func presentableTappedNext(_ senderId: String) {
+        guard !senderId.isEmpty else { return }
+        
         guard let view = mapper.nextViewable(senderId),
               let viewController = view.viewController else { return }
         
@@ -35,6 +37,8 @@ class Router {
     }
     
     func back(_ senderId: String) {
+        guard !senderId.isEmpty else { return }
+
         guard let item = mapper.view(for: senderId) else { return }
         
         switch item.presentationType {
